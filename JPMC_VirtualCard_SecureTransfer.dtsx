@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{70FBF063-AA41-44F9-A035-C937DEFA667C}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{130BBE2A-8D9C-4BC0-B71D-F19835917309}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAlOJhzyjlWeNWVemNSVv2bAAAAAASAAACgAAAAEAAAAMkXhFWBBhpRvuZGMFb3w/QgAAAAWUZcAbgHZ9AyRO8jiTk5Eq9PEYBx4qgxHqrX0g27XuwUAAAAXW60HMqadCH7H5KfYWmmSYFtjmk</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADZZBzmRzf0ZXSQ52q+2OIQAAAAAASAAACgAAAAEAAAAFw6QzWix/O1Wj187qbPYCYgAAAA5VH5NukJvcJn7CHRZaRn0UL1DbyNTCTXYpWHG18uK24UAAAANl4pPiZ1FMSkrkVDKAviJL44lbY</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -60,7 +60,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\JPMC_FTSCAT_PGP_2026.asc</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -269,14 +269,35 @@
               Language="CSharp"
               ReadWriteVariables="User::var_TimeStamp">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Pasco County BOCC")]
+[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -651,35 +672,14 @@ namespace ST_6da00f373fe8442386f0f6a5c91d5bdd.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Pasco County BOCC")]
-[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -924,7 +924,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="0" />
               <PublicKeyPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc" />
+                Value="C:\_repos\Development\JPMC Virtual Card\keys\JPMC_FTSCAT_PGP_2026.asc" />
               <PrivateKeyPath
                 Type="8"
                 Value="C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc" />
@@ -951,7 +951,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="0" />
               <TaskVersion
                 Type="3"
-                Value="1" />
+                Value="2" />
               <TargetServerVersion
                 Type="3"
                 Value="160" />
@@ -1109,56 +1109,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           TopLeft="17.1666660292282,345.999997287989" />
         <NodeLayout
           Size="238.4,41.6"
-          Id="Package\Foreach Loop Container\SFTP Encrypted File to JPM"
-          TopLeft="17.1666660292282,264.983331183311" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="136.366666029228,225.566665078634">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
-              Start="0,0"
-              End="0,31.9166661046777">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9166661046777" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="136.366666029228,306.583331183311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
-              Start="0,0"
-              End="0,31.9166661046777">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9166661046777" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\PGP Task"
           TopLeft="17.1666660292282,102.949998973956" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\Foreach Loop Container\SFTP Encrypted File to JPM"
+          TopLeft="17.1666660292282,264.983331183311" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
           TopLeft="136.366666029228,63.5333328692781">
@@ -1182,8 +1138,52 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="136.366666029228,225.566665078634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4166661046777"
+              Start="0,0"
+              End="0,31.9166661046777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9166661046777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
           TopLeft="136.366666029228,144.549998973956">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4166661046777"
+              Start="0,0"
+              End="0,31.9166661046777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9166661046777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="136.366666029228,306.583331183311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
