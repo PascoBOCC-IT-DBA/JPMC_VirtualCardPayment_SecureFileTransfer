@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{4D7C8717-EBD9-4758-8F07-3E6A23860070}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{70FBF063-AA41-44F9-A035-C937DEFA667C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB4yy7YKeykQQWKqlfCtXYmAAAAAASAAACgAAAAEAAAAG+7H2/k5uw0rPySbHhYROAgAAAACc+JfqO6LzhVVXOSDEMaqfJE/2EuZ7pxL01zdnpzne8UAAAAbL5LL+snV3ZagP+mnF2OjXdXT4A</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAlOJhzyjlWeNWVemNSVv2bAAAAAASAAACgAAAAEAAAAMkXhFWBBhpRvuZGMFb3w/QgAAAAWUZcAbgHZ9AyRO8jiTk5Eq9PEYBx4qgxHqrX0g27XuwUAAAAXW60HMqadCH7H5KfYWmmSYFtjmk</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -41,17 +41,26 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\encrypt</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C9F4AE41-AFB4-4B41-99F6-214DE1570229}"
+      DTS:ObjectName="prm_PgpPrivateKey">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:DTSID="{49A113B7-5F6F-422E-B21F-F3FBA8737C40}"
-      DTS:ObjectName="prm_PgpKeyPath"
+      DTS:ObjectName="prm_PgpPublicKey"
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -59,12 +68,12 @@
       DTS:CreationName=""
       DTS:DTSID="{589E3A89-A194-46FF-982D-E968D836BB93}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::prm_FolderBase] + &quot;\\encrypt\\archive\\&quot;"
+      DTS:Expression="@[$Package::prm_FolderBase] + &quot;archive\\&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="var_ArchivePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\archive\</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\archive\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -81,12 +90,12 @@
       DTS:CreationName=""
       DTS:DTSID="{4396FD05-AD9F-4719-8D18-742E35A7C5B6}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::prm_FolderBase] + &quot;\\encrypt\\out\\&quot; +  @[User::var_EncryptedFileName]"
+      DTS:Expression="@[$Package::prm_FolderBase] + &quot;out\\&quot; +  @[User::var_EncryptedFileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="var_EncryptedFullPath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -101,12 +110,12 @@
       DTS:CreationName=""
       DTS:DTSID="{604D3872-DF9D-4029-87FD-373DA2F3B5E8}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::prm_FolderBase] + &quot;\\encrypt\\in\\&quot;"
+      DTS:Expression="@[$Package::prm_FolderBase] + &quot;in\\&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="var_FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -117,7 +126,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FullFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\test aci file.txt</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\test aci file.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -148,7 +157,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\" />
+              Folder="C:\_repos\Development\JPMC Virtual Card\in\" />
             <FEFEProperty
               FileSpec="*.txt" />
             <FEFEProperty
@@ -190,13 +199,13 @@
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\test aci file.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\in\test aci file.txt" />
               <TargetConnectionManager
                 Type="8"
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <TargetPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\archive\" />
+                Value="C:\_repos\Development\JPMC Virtual Card\archive\" />
               <AutoCreateTargetPath
                 Type="11"
                 Value="0" />
@@ -260,35 +269,14 @@
               Language="CSharp"
               ReadWriteVariables="User::var_TimeStamp">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Pasco County BOCC")]
-[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -663,14 +651,35 @@ namespace ST_6da00f373fe8442386f0f6a5c91d5bdd.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Pasco County BOCC")]
+[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -882,7 +891,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Foreach Loop Container\PGP Task"
           DTS:CreationName="KingswaySoft.IntegrationToolkit.ProductivityPack.PgpTask"
           DTS:Description="PGP Task"
-          DTS:DTSID="{AECB5D7D-37EB-447B-80A0-8A5BA3AE37E5}"
+          DTS:DTSID="{F2AADA12-2AC2-450A-992B-7243C9E71C13}"
           DTS:ExecutableType="KingswaySoft.IntegrationToolkit.ProductivityPack.PgpTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="PGP Task"
@@ -891,32 +900,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:PropertyExpression
             DTS:Name="DestinationDirectoryPath">@[User::var_EncryptedFullPath]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="PublicKeyPath">@[$Package::prm_PgpKeyPath]</DTS:PropertyExpression>
+            DTS:Name="PrivateKeyPath">@[$Package::prm_PgpPrivateKey]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="PublicKeyPath">@[$Package::prm_PgpPublicKey]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="SourcePath">@[User::var_FullFilePath]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <InnerObject>
               <Action
                 Type="3"
-                Value="1" />
+                Value="5" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\test aci file.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\in\test aci file.txt" />
               <SignatureFilePath
                 Type="8"
                 Value="" />
               <DestinationDirectoryPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <OverwriteExistingItems
                 Type="11"
                 Value="0" />
               <PublicKeyPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc" />
+                Value="C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc" />
               <PrivateKeyPath
                 Type="8"
-                Value="" />
+                Value="C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc" />
               <UseAsciiArmor
                 Type="11"
                 Value="0" />
@@ -940,7 +951,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="0" />
               <TaskVersion
                 Type="3"
-                Value="2" />
+                Value="1" />
               <TargetServerVersion
                 Type="3"
                 Value="160" />
@@ -975,7 +986,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <TargetConnectionManager
                 Type="8"
                 Value="{078AA8C7-EE2D-4E13-BD88-8D04D5E8BA29}" />
@@ -1032,11 +1043,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{10F6EC96-F555-4656-BD23-E0B52AC4F325}"
-          DTS:From="Package\Foreach Loop Container\PGP Task"
+          DTS:DTSID="{227F1C98-9E93-4129-9431-F82649E4B3DE}"
+          DTS:From="Package\Foreach Loop Container\Capture Timestamp"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Foreach Loop Container\Archive ICL File" />
+          DTS:To="Package\Foreach Loop Container\PGP Task" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
@@ -1048,11 +1059,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{DA75C157-8742-4139-AA1B-27BE79CD5386}"
-          DTS:From="Package\Foreach Loop Container\Capture Timestamp"
+          DTS:DTSID="{EBE4218D-490A-492B-9010-5ACD36456539}"
+          DTS:From="Package\Foreach Loop Container\PGP Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Foreach Loop Container\PGP Task" />
+          DTS:To="Package\Foreach Loop Container\Archive ICL File" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
@@ -1087,7 +1098,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="238.4,41.6"
           Id="Package\Foreach Loop Container\Archive ICL File"
-          TopLeft="17.1666660292282,183.966665078633" />
+          TopLeft="17.1666660292282,183.966665078634" />
         <NodeLayout
           Size="238.4,41.6"
           Id="Package\Foreach Loop Container\Capture Timestamp"
@@ -1098,70 +1109,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           TopLeft="17.1666660292282,345.999997287989" />
         <NodeLayout
           Size="238.4,41.6"
-          Id="Package\Foreach Loop Container\PGP Task"
-          TopLeft="17.1666660292282,102.949998973956" />
-        <NodeLayout
-          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\SFTP Encrypted File to JPM"
           TopLeft="17.1666660292282,264.983331183311" />
         <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="136.366666029228,144.549998973956">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046771"
-              Start="0,0"
-              End="0,31.9166661046771">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9166661046771" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="136.366666029228,225.566665078633">
+          TopLeft="136.366666029228,225.566665078634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046775"
+              EndConnector="0,39.4166661046777"
               Start="0,0"
-              End="0,31.9166661046775">
+              End="0,31.9166661046777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046775" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="136.366666029228,63.5333328692781">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046779"
-              Start="0,0"
-              End="0,31.9166661046779">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9166661046779" />
+                    End="0,31.9166661046777" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1192,13 +1155,61 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\Foreach Loop Container\PGP Task"
+          TopLeft="17.1666660292282,102.949998973956" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="136.366666029228,63.5333328692781">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4166661046777"
+              Start="0,0"
+              End="0,31.9166661046777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9166661046777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="136.366666029228,144.549998973956">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4166661046777"
+              Start="0,0"
+              End="0,31.9166661046777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9166661046777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="280,442.4"
-          Size="280,485.6"
+          PanelSize="272,442.4"
+          Size="272,485.6"
           Id="Package\Foreach Loop Container"
-          TopLeft="38.3333318846097,26.8666669834985" />
+          TopLeft="69.9999968210861,26.8666669834985" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
