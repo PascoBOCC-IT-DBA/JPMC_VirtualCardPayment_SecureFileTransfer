@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{A0C4B847-7FC4-492A-858C-BE29D26E9DD3}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{CA5CB10B-8D50-4190-BE0F-771B7E4647A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAgdajnm07AQzfqgWhyosaRAAAAAASAAACgAAAAEAAAAANna0/Tl9bFTbxcSHUvBKYgAAAAXeJ4hD+nw/dqNtBPUP06XEbPIm+kAhosTxyk72Nl/LAUAAAAdWhCF0neW0fr2otdYmQ9b0C8oiE</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD6rkV5S7PgcPq2lm4XrycPAAAAAASAAACgAAAAEAAAAJmrMiO/m9GWvpTKTBQignIgAAAAblszPB+IrePmtpc0fv6oYEXCwojpJWgIkNxSJeM79bkUAAAAMQXjnM1XRzr8XM7ZWtI0JKOYWzc</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -41,17 +41,17 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:DTSID="{49A113B7-5F6F-422E-B21F-F3FBA8737C40}"
-      DTS:ObjectName="prm_PublicKeyPath"
+      DTS:ObjectName="prm_PgpKeyPath"
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">\\sqlsis01a\g$\Keys\JPM\Virtual Card Payments\JPMC_NonProd_FTS_PGP.ppk</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -64,7 +64,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_ArchivePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\archive\</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\archive\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -86,7 +86,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_EncryptedFullPath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\in\</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FullFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\in\test aci file.txt</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\test aci file.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -148,7 +148,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\in\" />
+              Folder="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\" />
             <FEFEProperty
               FileSpec="*.txt" />
             <FEFEProperty
@@ -190,13 +190,13 @@
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\in\test aci file.txt" />
+                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\test aci file.txt" />
               <TargetConnectionManager
                 Type="8"
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <TargetPath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\archive\" />
+                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\archive\" />
               <AutoCreateTargetPath
                 Type="11"
                 Value="0" />
@@ -891,7 +891,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:PropertyExpression
             DTS:Name="DestinationDirectoryPath">@[User::var_EncryptedFullPath]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="PublicKeyPath">@[$Package::prm_PublicKeyPath]</DTS:PropertyExpression>
+            DTS:Name="PublicKeyPath">@[$Package::prm_PgpKeyPath]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="SourcePath">@[User::var_FullFilePath]</DTS:PropertyExpression>
           <DTS:ObjectData>
@@ -901,19 +901,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="1" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\in\test aci file.txt" />
+                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\test aci file.txt" />
               <SignatureFilePath
                 Type="8"
                 Value="" />
               <DestinationDirectoryPath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <OverwriteExistingItems
                 Type="11"
                 Value="0" />
               <PublicKeyPath
                 Type="8"
-                Value="\\sqlsis01a\g$\Keys\JPM\Virtual Card Payments\JPMC_NonProd_FTS_PGP.ppk" />
+                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc" />
               <PrivateKeyPath
                 Type="8"
                 Value="" />
@@ -925,7 +925,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="" />
               <PublicKeyId
                 Type="8"
-                Value="JPMC_IP_MFT_FTSCAT &lt;IP_AIS_File_Transfer_Services_Ops@jpmchase.com&gt;" />
+                Value="Pasco BOCC JMPC Virtual Card QA &lt;itproductionsupportapps@pascocountyfl.net&gt;" />
               <ResponseOutputVariable
                 Type="8"
                 Value="" />
@@ -975,7 +975,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <TargetConnectionManager
                 Type="8"
                 Value="{078AA8C7-EE2D-4E13-BD88-8D04D5E8BA29}" />
@@ -1110,14 +1110,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
+              EndConnector="0,39.4166661046771"
               Start="0,0"
-              End="0,31.9166661046777">
+              End="0,31.9166661046771">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046777" />
+                    End="0,31.9166661046771" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1132,14 +1132,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046776"
+              EndConnector="0,39.4166661046775"
               Start="0,0"
-              End="0,31.9166661046776">
+              End="0,31.9166661046775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046776" />
+                    End="0,31.9166661046775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1154,14 +1154,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046776"
+              EndConnector="0,39.4166661046779"
               Start="0,0"
-              End="0,31.9166661046776">
+              End="0,31.9166661046779">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046776" />
+                    End="0,31.9166661046779" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
