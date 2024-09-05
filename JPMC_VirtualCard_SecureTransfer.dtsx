@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{CA5CB10B-8D50-4190-BE0F-771B7E4647A4}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{4D7C8717-EBD9-4758-8F07-3E6A23860070}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD6rkV5S7PgcPq2lm4XrycPAAAAAASAAACgAAAAEAAAAJmrMiO/m9GWvpTKTBQignIgAAAAblszPB+IrePmtpc0fv6oYEXCwojpJWgIkNxSJeM79bkUAAAAMQXjnM1XRzr8XM7ZWtI0JKOYWzc</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB4yy7YKeykQQWKqlfCtXYmAAAAAASAAACgAAAAEAAAAG+7H2/k5uw0rPySbHhYROAgAAAACc+JfqO6LzhVVXOSDEMaqfJE/2EuZ7pxL01zdnpzne8UAAAAbL5LL+snV3ZagP+mnF2OjXdXT4A</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -41,7 +41,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\encrypt</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -51,7 +51,7 @@
       DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc</DTS:Property>
+        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -64,7 +64,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_ArchivePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\archive\</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\archive\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -86,7 +86,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_EncryptedFullPath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -106,7 +106,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FullFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\test aci file.txt</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\test aci file.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -148,7 +148,7 @@
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\" />
+              Folder="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\" />
             <FEFEProperty
               FileSpec="*.txt" />
             <FEFEProperty
@@ -190,13 +190,13 @@
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\test aci file.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\test aci file.txt" />
               <TargetConnectionManager
                 Type="8"
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <TargetPath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\archive\" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\archive\" />
               <AutoCreateTargetPath
                 Type="11"
                 Value="0" />
@@ -260,14 +260,35 @@
               Language="CSharp"
               ReadWriteVariables="User::var_TimeStamp">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Pasco County BOCC")]
+[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -642,35 +663,14 @@ namespace ST_6da00f373fe8442386f0f6a5c91d5bdd.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Pasco County BOCC")]
-[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -901,19 +901,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="1" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\in\test aci file.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\in\test aci file.txt" />
               <SignatureFilePath
                 Type="8"
                 Value="" />
               <DestinationDirectoryPath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <OverwriteExistingItems
                 Type="11"
                 Value="0" />
               <PublicKeyPath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_public.asc" />
               <PrivateKeyPath
                 Type="8"
                 Value="" />
@@ -975,7 +975,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\PascoBOCC-IT-DBA\JPMC_VirtualCardPayment_SecureFileTransfer\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypt\encrypt\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <TargetConnectionManager
                 Type="8"
                 Value="{078AA8C7-EE2D-4E13-BD88-8D04D5E8BA29}" />
