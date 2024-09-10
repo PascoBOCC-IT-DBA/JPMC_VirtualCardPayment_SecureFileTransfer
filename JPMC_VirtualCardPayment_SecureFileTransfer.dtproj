@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">BCCIT163L</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAACAAAAAAADZgAAwAAAABAAAACr3AQg/9I5t5MwRo8Hjp4sAAAAAASAAACgAAAAEAAAAOhH7EyA6bs49LjMy/KAXj2IAAAAyhV9IO5y27EmP0xQPy8cDq+aVTPsbAs8+zal10vjfFhK6uP9Ldj75ms3aad4bj/ARpZsHHVmlpTT5nNhcOdbOGmYqpv0i/7ynTMKmHC1wX2SlWiJjI46Bty/AvdGlEF7udgV0weLK4q+ULJiPgIMWKLwy3rYNo1baC73sqJoAkxMfG7GHubbnBQAAADpWLLt56ZWFrq5l093X6S4gP/gUg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAACAAAAAAADZgAAwAAAABAAAAA+g+aMRHx2b61z5atcPR0PAAAAAASAAACgAAAAEAAAAOI0EPancfGKgmSkN/ACerSIAAAAXo4Y2LqyXVoakCT4STM4fXYIC9AgK4O6TrjB2EhPIidPDQeZaZumkxWNPmxr1H64Koi+iUUg+J6or5EirYhmjIdoDpsJa0lLF3grr8EVIrqNXL5pvvJRGKTiVU7nIMFgejEYtTn3WVRF1X6xxV1B3+8pislpOQ721S93tI+Izc5QjECNrvoQyBQAAABqnrsaGBcF7Pcqi/28P6I9bpq/8w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">JPMC_VirtualCard_SecureTransfer</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">36</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">37</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{130BBE2A-8D9C-4BC0-B71D-F19835917309}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B9E0F2CE-AD0B-4011-A3FF-257AD13B864C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -74,7 +74,7 @@
                     <SSIS:Property SSIS:Name="Description">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>

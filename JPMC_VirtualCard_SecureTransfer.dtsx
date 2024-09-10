@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{130BBE2A-8D9C-4BC0-B71D-F19835917309}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{8C03109A-3A5B-4196-BC6E-8C6D70C53211}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADZZBzmRzf0ZXSQ52q+2OIQAAAAAASAAACgAAAAEAAAAFw6QzWix/O1Wj187qbPYCYgAAAA5VH5NukJvcJn7CHRZaRn0UL1DbyNTCTXYpWHG18uK24UAAAANl4pPiZ1FMSkrkVDKAviJL44lbY</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACOPGNesv8oEr1KqrY8PnZFAAAAAASAAACgAAAAEAAAAHg5kCx5EbMMeH+sXzI9t0YgAAAA/ZvB0aOSzF4OkeLimHyU7fCvacCnFGM8sToBrjUjTwYUAAAAjgpgvyouP2Onv2Q80eE8A1xmtoc</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -47,7 +47,8 @@
       DTS:CreationName=""
       DTS:DataType="8"
       DTS:DTSID="{C9F4AE41-AFB4-4B41-99F6-214DE1570229}"
-      DTS:ObjectName="prm_PgpPrivateKey">
+      DTS:ObjectName="prm_PgpPrivateKey"
+      DTS:Required="True">
       <DTS:Property
         DTS:DataType="8"
         DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc</DTS:Property>
@@ -104,7 +105,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FileName">
       <DTS:VariableValue
-        DTS:DataType="8">test aci file.txt</DTS:VariableValue>
+        DTS:DataType="8">JPMC_VirtualCard_Test_File.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -126,7 +127,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="var_FullFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\test aci file.txt</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -170,6 +171,88 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Archive Encrypted File"
+          DTS:CreationName="KingswaySoft.IntegrationToolkit.PremiumFilePack.Shared.PremiumFileTransferTask"
+          DTS:Description="Premium File Transfer Task"
+          DTS:DTSID="{06F4A3CC-FCB3-44A2-AFD7-15EF0C7F69A3}"
+          DTS:ExecutableType="KingswaySoft.IntegrationToolkit.PremiumFilePack.Shared.PremiumFileTransferTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive Encrypted File"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SourcePath">@[User::var_EncryptedFullPath]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="TargetPath">@[User::var_ArchivePath]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <InnerObject>
+              <Version
+                Type="3"
+                Value="2" />
+              <Operation
+                Type="3"
+                Value="0" />
+              <ContinueOnError
+                Type="11"
+                Value="0" />
+              <SourceConnectionManager
+                Type="8"
+                Value="&lt;&lt;Local File&gt;&gt;" />
+              <SourcePath
+                Type="8"
+                Value="C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+              <TargetConnectionManager
+                Type="8"
+                Value="&lt;&lt;Local File&gt;&gt;" />
+              <TargetPath
+                Type="8"
+                Value="C:\_repos\Development\JPMC Virtual Card\archive\" />
+              <AutoCreateTargetPath
+                Type="11"
+                Value="0" />
+              <DirectoryName
+                Type="8"
+                Value="" />
+              <FileOverwriteMode
+                Type="3"
+                Value="1" />
+              <AutoIncrementFormatString
+                Type="8"
+                Value="{BASE}{INC}" />
+              <Flatten
+                Type="11"
+                Value="0" />
+              <SelectSourcePathDirectory
+                Type="11"
+                Value="0" />
+              <RecursionMaxDepth
+                Type="3"
+                Value="-1" />
+              <SelectFiles
+                Type="11"
+                Value="1" />
+              <SelectDirectories
+                Type="11"
+                Value="1" />
+              <ErrorHandling
+                Type="3"
+                Value="0" />
+              <ErrorOutputVariable
+                Type="8"
+                Value="" />
+              <AdvancedFilterConditions
+                Type="8"
+                Value="[]" />
+              <PropertyMappings
+                Type="8"
+                Value="" />
+              <TargetServerVersion
+                Type="3"
+                Value="160" />
+            </InnerObject>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\Archive ICL File"
           DTS:CreationName="KingswaySoft.IntegrationToolkit.PremiumFilePack.Shared.PremiumFileTransferTask"
           DTS:Description="Premium File Transfer Task"
@@ -199,7 +282,7 @@
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\in\test aci file.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt" />
               <TargetConnectionManager
                 Type="8"
                 Value="&lt;&lt;Local File&gt;&gt;" />
@@ -269,35 +352,14 @@
               Language="CSharp"
               ReadWriteVariables="User::var_TimeStamp">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Pasco County BOCC")]
-[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -672,14 +734,35 @@ namespace ST_6da00f373fe8442386f0f6a5c91d5bdd.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Pasco County BOCC")]
+[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -870,24 +953,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\Delete Encrypted File After Upload"
-          DTS:CreationName="Microsoft.FileSystemTask"
-          DTS:Description="File System Task"
-          DTS:DTSID="{A6D2F9D5-5F49-4CF1-ABDF-46CED7C8618E}"
-          DTS:ExecutableType="Microsoft.FileSystemTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete Encrypted File After Upload"
-          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <FileSystemData
-              TaskOperationType="DeleteFile"
-              TaskSourcePath="User::var_EncryptedFullPath"
-              TaskIsSourceVariable="True" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Foreach Loop Container\PGP Task"
           DTS:CreationName="KingswaySoft.IntegrationToolkit.ProductivityPack.PgpTask"
           DTS:Description="PGP Task"
@@ -912,7 +977,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="5" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\in\test aci file.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt" />
               <SignatureFilePath
                 Type="8"
                 Value="" />
@@ -1067,11 +1132,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{5BB38418-E830-4D48-B520-2FA21ED4B31B}"
+          DTS:DTSID="{F3E89610-D9AB-41E4-B652-966F1AA04C01}"
           DTS:From="Package\Foreach Loop Container\SFTP Encrypted File to JPM"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Foreach Loop Container\Delete Encrypted File After Upload" />
+          DTS:To="Package\Foreach Loop Container\Archive Encrypted File" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -1096,23 +1161,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="238.4,41.6"
+          Size="238,42"
+          Id="Package\Foreach Loop Container\Archive Encrypted File"
+          TopLeft="17.1666660292282,355" />
+        <NodeLayout
+          Size="238,42"
           Id="Package\Foreach Loop Container\Archive ICL File"
           TopLeft="17.1666660292282,183.966665078634" />
         <NodeLayout
-          Size="238.4,41.6"
+          Size="238,42"
           Id="Package\Foreach Loop Container\Capture Timestamp"
           TopLeft="17.1666660292282,21.9333328692781" />
         <NodeLayout
-          Size="238.4,41.6"
-          Id="Package\Foreach Loop Container\Delete Encrypted File After Upload"
-          TopLeft="17.1666660292282,345.999997287989" />
-        <NodeLayout
-          Size="238.4,41.6"
+          Size="238,42"
           Id="Package\Foreach Loop Container\PGP Task"
           TopLeft="17.1666660292282,102.949998973956" />
         <NodeLayout
-          Size="238.4,41.6"
+          Size="238,42"
           Id="Package\Foreach Loop Container\SFTP Encrypted File to JPM"
           TopLeft="17.1666660292282,264.983331183311" />
         <EdgeLayout
@@ -1139,18 +1204,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="136.366666029228,225.566665078634">
+          TopLeft="136.166666029228,225.966665078634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
+              EndConnector="0,39.016666104677"
               Start="0,0"
-              End="0,31.9166661046777">
+              End="0,31.516666104677">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046777" />
+                    End="0,31.516666104677" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1183,18 +1248,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 3]"
-          TopLeft="136.366666029228,306.583331183311">
+          TopLeft="136.166666029228,306.983331183311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
+              EndConnector="0,48.016668816689"
               Start="0,0"
-              End="0,31.9166661046777">
+              End="0,40.516668816689">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046777" />
+                    End="0,40.516668816689" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1206,8 +1271,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="272,442.4"
-          Size="272,485.6"
+          PanelSize="272,426"
+          Size="272,469"
           Id="Package\Foreach Loop Container"
           TopLeft="69.9999968210861,26.8666669834985" />
       </GraphLayout>
