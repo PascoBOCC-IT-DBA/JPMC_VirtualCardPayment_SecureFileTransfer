@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{8C03109A-3A5B-4196-BC6E-8C6D70C53211}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{0155A3AF-7F7C-4A71-909A-BBE3D50AB4A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,11 +23,11 @@
       DTS:ObjectName="SFTP Connection Manager">
       <DTS:ObjectData>
         <ConnectionManager
-          ConnectionString="HostName=ftscat.mfts.jpmchase.com;Port=22;ServerType=Unknown;AuthenticationType=Password;PathToKeyFile=C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\keys\JPMC_NonProd_FTS_PGP.txt;UserName=ftse73656;ProxyType=None;ProxyUsername=;ProxyServer=;ProxyServerPort=0;Timeout=120;DownloadBufferSize=49152;DownloadQueueLength=8;UploadBufferSize=49152;UploadQueueLength=8;UseLargeBuffers=True;EnableTransferQueue=True;UseSmallPackets=False;UseCompression=True;MinimumRsaKeySize=2048;KeyExchangeAlgorithms=&quot;DiffieHellmanGroup14SHA1, DiffieHellmanGroupExchangeSHA1, DiffieHellmanGroupExchangeSHA256, ECDiffieHellmanNistP256, Curve25519, DiffieHellmanOakleyGroupSHA256, DiffieHellmanOakleyGroupSHA512&quot;;MacAlgorithms=&quot;SHA1, SHA256, SHA512&quot;;EncryptionAlgorithms=&quot;TripleDES, AES, Twofish&quot;;UseLegacyGroupExchange=True;PreferredHostKeyAlgorithm=RSA;HostKeyAlgorithms=&quot;Certificate, DSS, ECDsaNistP256, ED25519, RSA&quot;;KeepAliveInterval=0;PathToLogFile=;OutputLog=False;LogLevel=Off;TransferType=Binary;Encoding=65001;UseStreamedDataTransfer=True;UseAsyncDataTransfer=True"
+          ConnectionString="HostName=ftscat.mfts.jpmchase.com;Port=22;ServerType=Unknown;AuthenticationType=Password;PathToKeyFile=C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\keys\JPMC_NonProd_FTS_PGP.txt;UserName=ftse73656;ProxyType=None;ProxyUsername=;ProxyServer=;ProxyServerPort=0;Timeout=120;DownloadBufferSize=49152;DownloadQueueLength=8;UploadBufferSize=49152;UploadQueueLength=8;UseLargeBuffers=True;EnableTransferQueue=True;UseSmallPackets=False;UseCompression=True;MinimumRsaKeySize=2048;KeyExchangeAlgorithms=&quot;DiffieHellmanGroup14SHA1, DiffieHellmanGroupExchangeSHA1, DiffieHellmanGroupExchangeSHA256, ECDiffieHellmanNistP256, Curve25519, DiffieHellmanOakleyGroupSHA256, DiffieHellmanOakleyGroupSHA512&quot;;MacAlgorithms=&quot;SHA1, SHA256, SHA512&quot;;EncryptionAlgorithms=&quot;TripleDES, AES, Twofish&quot;;UseLegacyGroupExchange=True;UseLegacySshRsaClientAuthentication=False;PreferredHostKeyAlgorithm=RSA;HostKeyAlgorithms=&quot;Certificate, DSS, ECDsaNistP256, ED25519, RSA&quot;;KeepAliveInterval=0;PathToLogFile=;OutputLog=False;LogLevel=Off;TransferType=Binary;Encoding=65001;UseStreamedDataTransfer=True;UseAsyncDataTransfer=True"
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACOPGNesv8oEr1KqrY8PnZFAAAAAASAAACgAAAAEAAAAHg5kCx5EbMMeH+sXzI9t0YgAAAA/ZvB0aOSzF4OkeLimHyU7fCvacCnFGM8sToBrjUjTwYUAAAAjgpgvyouP2Onv2Q80eE8A1xmtoc</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAArWYVQkmHtcy0UTnmem9MXAAAAAASAAACgAAAAEAAAALQKSJB1FitwTezNR36GdQUgAAAAudL7pwHsSpUlgUYDBipWs4/jCZ+zQqG742/GEkfBkkcUAAAAboVkRXwicANBBqsvNg3fpjk95DU</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,26 +42,6 @@
       <DTS:Property
         DTS:DataType="8"
         DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{C9F4AE41-AFB4-4B41-99F6-214DE1570229}"
-      DTS:ObjectName="prm_PgpPrivateKey"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc</DTS:Property>
-    </DTS:PackageParameter>
-    <DTS:PackageParameter
-      DTS:CreationName=""
-      DTS:DataType="8"
-      DTS:DTSID="{49A113B7-5F6F-422E-B21F-F3FBA8737C40}"
-      DTS:ObjectName="prm_PgpPublicKey"
-      DTS:Required="True">
-      <DTS:Property
-        DTS:DataType="8"
-        DTS:Name="ParameterValue">C:\_repos\Development\JPMC Virtual Card\keys\JPMC_FTSCAT_PGP_2026.asc</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -128,6 +108,24 @@
       DTS:ObjectName="var_FullFilePath">
       <DTS:VariableValue
         DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ECBEB4CF-03F8-4C20-A8B5-BF269D6DC438}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="var_PrivateKey">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sqlsis01a\g$\Keys\JPMC\Virtual Card Payments\signing\Pasco BOCC JPMC MFT Production_0x9624E0F5_SECRET.asc</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EA082248-D38A-42F5-9629-C44F44C2320F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="var_PublicKey">
+      <DTS:VariableValue
+        DTS:DataType="8">\\sqlsis01a\g$\Keys\JPMC\Virtual Card Payments\encryption\JPMC_PROD_FTS_PGP.asc</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -352,14 +350,35 @@
               Language="CSharp"
               ReadWriteVariables="User::var_TimeStamp">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Pasco County BOCC")]
+[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
+[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -734,35 +753,14 @@ namespace ST_6da00f373fe8442386f0f6a5c91d5bdd.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Pasco County BOCC")]
-[assembly: AssemblyProduct("ST_6da00f373fe8442386f0f6a5c91d5bdd")]
-[assembly: AssemblyCopyright("Copyright @ Pasco County BOCC 2024")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -965,9 +963,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <DTS:PropertyExpression
             DTS:Name="DestinationDirectoryPath">@[User::var_EncryptedFullPath]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="PrivateKeyPath">@[$Package::prm_PgpPrivateKey]</DTS:PropertyExpression>
+            DTS:Name="PrivateKeyPath">@[User::var_PrivateKey]</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="PublicKeyPath">@[$Package::prm_PgpPublicKey]</DTS:PropertyExpression>
+            DTS:Name="PublicKeyPath">@[User::var_PublicKey]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="SourcePath">@[User::var_FullFilePath]</DTS:PropertyExpression>
           <DTS:ObjectData>
@@ -989,10 +987,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="0" />
               <PublicKeyPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\keys\JPMC_FTSCAT_PGP_2026.asc" />
+                Value="\\sqlsis01a\g$\Keys\JPMC\Virtual Card Payments\encryption\JPMC_PROD_FTS_PGP.asc" />
               <PrivateKeyPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\keys\Pasco BOCC JMPC Virtual Card QA_0x8E545463_SECRET.asc" />
+                Value="\\sqlsis01a\g$\Keys\JPMC\Virtual Card Payments\signing\Pasco BOCC JPMC MFT Production_0x9624E0F5_SECRET.asc" />
               <UseAsciiArmor
                 Type="11"
                 Value="0" />
@@ -1001,7 +999,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="" />
               <PublicKeyId
                 Type="8"
-                Value="Pasco BOCC JMPC Virtual Card QA &lt;itproductionsupportapps@pascocountyfl.net&gt;" />
+                Value="JPMC_GTI_MFT_FTS &lt;IP_AIS_File_Transfer_Services_Ops@jpmchase.com&gt;" />
               <ResponseOutputVariable
                 Type="8"
                 Value="" />
@@ -1161,23 +1159,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\Archive Encrypted File"
           TopLeft="17.1666660292282,355" />
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\Archive ICL File"
           TopLeft="17.1666660292282,183.966665078634" />
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\Capture Timestamp"
           TopLeft="17.1666660292282,21.9333328692781" />
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\PGP Task"
           TopLeft="17.1666660292282,102.949998973956" />
         <NodeLayout
-          Size="238,42"
+          Size="238.4,41.6"
           Id="Package\Foreach Loop Container\SFTP Encrypted File to JPM"
           TopLeft="17.1666660292282,264.983331183311" />
         <EdgeLayout
@@ -1271,8 +1269,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="272,426"
-          Size="272,469"
+          PanelSize="272,425.6"
+          Size="272,468.8"
           Id="Package\Foreach Loop Container"
           TopLeft="69.9999968210861,26.8666669834985" />
       </GraphLayout>
