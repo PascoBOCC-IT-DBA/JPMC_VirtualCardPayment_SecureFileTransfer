@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="JPMC_VirtualCard_SecureTransfer"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{0155A3AF-7F7C-4A71-909A-BBE3D50AB4A3}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{3FA07EBD-A663-4E78-A7DB-52F9721575F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,11 +23,11 @@
       DTS:ObjectName="SFTP Connection Manager">
       <DTS:ObjectData>
         <ConnectionManager
-          ConnectionString="HostName=ftscat.mfts.jpmchase.com;Port=22;ServerType=Unknown;AuthenticationType=Password;PathToKeyFile=C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\keys\JPMC_NonProd_FTS_PGP.txt;UserName=ftse73656;ProxyType=None;ProxyUsername=;ProxyServer=;ProxyServerPort=0;Timeout=120;DownloadBufferSize=49152;DownloadQueueLength=8;UploadBufferSize=49152;UploadQueueLength=8;UseLargeBuffers=True;EnableTransferQueue=True;UseSmallPackets=False;UseCompression=True;MinimumRsaKeySize=2048;KeyExchangeAlgorithms=&quot;DiffieHellmanGroup14SHA1, DiffieHellmanGroupExchangeSHA1, DiffieHellmanGroupExchangeSHA256, ECDiffieHellmanNistP256, Curve25519, DiffieHellmanOakleyGroupSHA256, DiffieHellmanOakleyGroupSHA512&quot;;MacAlgorithms=&quot;SHA1, SHA256, SHA512&quot;;EncryptionAlgorithms=&quot;TripleDES, AES, Twofish&quot;;UseLegacyGroupExchange=True;UseLegacySshRsaClientAuthentication=False;PreferredHostKeyAlgorithm=RSA;HostKeyAlgorithms=&quot;Certificate, DSS, ECDsaNistP256, ED25519, RSA&quot;;KeepAliveInterval=0;PathToLogFile=;OutputLog=False;LogLevel=Off;TransferType=Binary;Encoding=65001;UseStreamedDataTransfer=True;UseAsyncDataTransfer=True"
+          ConnectionString="HostName=fts1.mfts.jpmchase.com;Port=22;ServerType=Unknown;AuthenticationType=Password;PathToKeyFile=C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\keys\JPMC_NonProd_FTS_PGP.txt;UserName=ftse73656;ProxyType=None;ProxyUsername=;ProxyServer=;ProxyServerPort=0;Timeout=120;DownloadBufferSize=49152;DownloadQueueLength=8;UploadBufferSize=49152;UploadQueueLength=8;UseLargeBuffers=True;EnableTransferQueue=True;UseSmallPackets=False;UseCompression=True;MinimumRsaKeySize=2048;KeyExchangeAlgorithms=&quot;DiffieHellmanGroup14SHA1, DiffieHellmanGroupExchangeSHA1, DiffieHellmanGroupExchangeSHA256, ECDiffieHellmanNistP256, Curve25519, DiffieHellmanOakleyGroupSHA256, DiffieHellmanOakleyGroupSHA512&quot;;MacAlgorithms=&quot;SHA1, SHA256, SHA512&quot;;EncryptionAlgorithms=&quot;TripleDES, AES, Twofish&quot;;UseLegacyGroupExchange=True;UseLegacySshRsaClientAuthentication=False;PreferredHostKeyAlgorithm=RSA;HostKeyAlgorithms=&quot;Certificate, DSS, ECDsaNistP256, ED25519, RSA&quot;;KeepAliveInterval=0;PathToLogFile=;OutputLog=False;LogLevel=Off;TransferType=Binary;Encoding=65001;UseStreamedDataTransfer=True;UseAsyncDataTransfer=True"
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAArWYVQkmHtcy0UTnmem9MXAAAAAASAAACgAAAAEAAAALQKSJB1FitwTezNR36GdQUgAAAAudL7pwHsSpUlgUYDBipWs4/jCZ+zQqG742/GEkfBkkcUAAAAboVkRXwicANBBqsvNg3fpjk95DU</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAMAh+K2G6/jSpavGAXuxDoAAAAAASAAACgAAAAEAAAACO8Q7JYQ71h+WUTVp/zRxEgAAAAWHxIsEYFpXK5q50xeXT4GpMEKci0tbW53u/d/4YIEAQUAAAAEBskG7hA5T5sFSUKxLtREENur/M</Password>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -71,12 +71,12 @@
       DTS:CreationName=""
       DTS:DTSID="{4396FD05-AD9F-4719-8D18-742E35A7C5B6}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::prm_FolderBase] + &quot;out\\&quot; +  @[User::var_EncryptedFileName]"
+      DTS:Expression="@[$Package::prm_FolderBase] + &quot;encrypted\\&quot; +  @[User::var_EncryptedFileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="var_EncryptedFullPath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\encrypted\PASCOGTI.ORDER.BATCH1..IN.TXT</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -89,25 +89,14 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{604D3872-DF9D-4029-87FD-373DA2F3B5E8}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[$Package::prm_FolderBase] + &quot;in\\&quot;"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="var_FilePath">
-      <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:DTSID="{9E7D32B9-472E-43EC-9402-5F8273F1B638}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::var_FilePath] +  @[User::var_FileName]"
+      DTS:Expression="@[$Package::prm_FolderBase] +  @[User::var_FileName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="var_FullFilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt</DTS:VariableValue>
+        DTS:DataType="8">C:\_repos\Development\JPMC Virtual Card\JPMC_VirtualCard_Test_File.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -152,11 +141,11 @@
         DTS:DTSID="{1153C4E1-4BED-46FF-9B5A-CEE21CDBE05C}"
         DTS:ObjectName="{1153C4E1-4BED-46FF-9B5A-CEE21CDBE05C}">
         <DTS:PropertyExpression
-          DTS:Name="Directory">@[User::var_FilePath]</DTS:PropertyExpression>
+          DTS:Name="Directory">@[$Package::prm_FolderBase]</DTS:PropertyExpression>
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
-              Folder="C:\_repos\Development\JPMC Virtual Card\in\" />
+              Folder="C:\_repos\Development\JPMC Virtual Card\" />
             <FEFEProperty
               FileSpec="*.txt" />
             <FEFEProperty
@@ -189,7 +178,7 @@
                 Value="2" />
               <Operation
                 Type="3"
-                Value="0" />
+                Value="1" />
               <ContinueOnError
                 Type="11"
                 Value="0" />
@@ -198,7 +187,7 @@
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypted\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <TargetConnectionManager
                 Type="8"
                 Value="&lt;&lt;Local File&gt;&gt;" />
@@ -280,7 +269,7 @@
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\JPMC_VirtualCard_Test_File.txt" />
               <TargetConnectionManager
                 Type="8"
                 Value="&lt;&lt;Local File&gt;&gt;" />
@@ -975,13 +964,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="5" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\in\JPMC_VirtualCard_Test_File.txt" />
+                Value="C:\_repos\Development\JPMC Virtual Card\JPMC_VirtualCard_Test_File.txt" />
               <SignatureFilePath
                 Type="8"
                 Value="" />
               <DestinationDirectoryPath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypted\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <OverwriteExistingItems
                 Type="11"
                 Value="0" />
@@ -1049,7 +1038,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                 Value="&lt;&lt;Local File&gt;&gt;" />
               <SourcePath
                 Type="8"
-                Value="C:\_repos\Development\JPMC Virtual Card\out\PASCOGTI.ORDER.BATCH1..IN.TXT" />
+                Value="C:\_repos\Development\JPMC Virtual Card\encrypted\PASCOGTI.ORDER.BATCH1..IN.TXT" />
               <TargetConnectionManager
                 Type="8"
                 Value="{078AA8C7-EE2D-4E13-BD88-8D04D5E8BA29}" />
@@ -1139,8 +1128,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{1B230CBE-8677-4F16-849B-7B0FA85BC210}"
-          DTS:ObjectName="{1B230CBE-8677-4F16-849B-7B0FA85BC210}"
+          DTS:DTSID="{ECAA3572-7326-4A54-8F08-17D05B14A5A9}"
+          DTS:ObjectName="{ECAA3572-7326-4A54-8F08-17D05B14A5A9}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::var_FileName" />
       </DTS:ForEachVariableMappings>
@@ -1184,14 +1173,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
+              EndConnector="0,39.4166661046779"
               Start="0,0"
-              End="0,31.9166661046777">
+              End="0,31.9166661046779">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046777" />
+                    End="0,31.9166661046779" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1202,18 +1191,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="136.166666029228,225.966665078634">
+          TopLeft="136.366666029228,225.566665078634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.016666104677"
+              EndConnector="0,39.416666104677"
               Start="0,0"
-              End="0,31.516666104677">
+              End="0,31.916666104677">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.516666104677" />
+                    End="0,31.916666104677" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1228,14 +1217,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4166661046777"
+              EndConnector="0,39.416666104678"
               Start="0,0"
-              End="0,31.9166661046777">
+              End="0,31.916666104678">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9166661046777" />
+                    End="0,31.916666104678" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1269,8 +1258,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="272,425.6"
-          Size="272,468.8"
+          PanelSize="272,451.2"
+          Size="272,494.4"
           Id="Package\Foreach Loop Container"
           TopLeft="69.9999968210861,26.8666669834985" />
       </GraphLayout>

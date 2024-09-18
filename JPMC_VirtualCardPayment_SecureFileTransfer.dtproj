@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">BCCIT163L</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAACAAAAAAADZgAAwAAAABAAAACww7rcgHHyhZ0msE4A/GGUAAAAAASAAACgAAAAEAAAAB0mcihd/psl8E1UsTBwZyuIAAAAahGi6dE0aJPhe7wsxxJVjYELiIeWSO9BGQihiCftE4Zh0dDK55By6Oew2vvwnrhreHRwJWIHHMrpM4mCNcdwIcnD74VFbeJUWkK+xx63WINbMe2z2/DXX7o0dY75IyBhw3hMvJETCrS6Rh0WzMLbEup+CGNGKiJddtKM0GDbt0RqZQgt6vDdehQAAADXC/h3AEwBEUJR/CzYVdgdZSQ2Uw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAe8MgHKJyLE+jVA6ybr+yewAAAAACAAAAAAADZgAAwAAAABAAAAB6ewHfYEcRY3g0Mrh7qSu9AAAAAASAAACgAAAAEAAAADmOLmbtYBe2iyLHRbmfGUGIAAAAEGmk+J7QOBuZHk1rLnH5gKbNew8SNZ6c9DrlYDcUlBdxvCEnxBHoosCU7du9CIiLh/XWqsaa+T0pH2xo2B3gucuoh646z4T+H53Sz8LyR/eEAJCCRGhdaTKk1iwq/BBySFdMi4fIYGuvF5r3R4N0WZsBW+cZDunR85qo/UwCagUYDYBSqxx6KxQAAABSwcF0LFvlWXutODwvnEaCcrvsaw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">JPMC_VirtualCard_SecureTransfer</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0155A3AF-7F7C-4A71-909A-BBE3D50AB4A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C45DDF77-978E-4592-ADAC-85CB2BC9A2AD}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -107,7 +107,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">HostName=ftscat.mfts.jpmchase.com;Port=22;ServerType=Unknown;AuthenticationType=Password;PathToKeyFile=C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\keys\JPMC_NonProd_FTS_PGP.txt;UserName=ftse73656;ProxyType=None;ProxyUsername=;ProxyServer=;ProxyServerPort=0;Timeout=120;DownloadBufferSize=49152;DownloadQueueLength=8;UploadBufferSize=49152;UploadQueueLength=8;UseLargeBuffers=True;EnableTransferQueue=True;UseSmallPackets=False;UseCompression=True;MinimumRsaKeySize=2048;KeyExchangeAlgorithms="DiffieHellmanGroup14SHA1, DiffieHellmanGroupExchangeSHA1, DiffieHellmanGroupExchangeSHA256, ECDiffieHellmanNistP256, Curve25519, DiffieHellmanOakleyGroupSHA256, DiffieHellmanOakleyGroupSHA512";MacAlgorithms="SHA1, SHA256, SHA512";EncryptionAlgorithms="TripleDES, AES, Twofish";UseLegacyGroupExchange=True;UseLegacySshRsaClientAuthentication=False;PreferredHostKeyAlgorithm=RSA;HostKeyAlgorithms="Certificate, DSS, ECDsaNistP256, ED25519, RSA";KeepAliveInterval=0;PathToLogFile=;OutputLog=False;LogLevel=Off;TransferType=Binary;Encoding=65001;UseStreamedDataTransfer=True;UseAsyncDataTransfer=True</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">HostName=fts1.mfts.jpmchase.com;Port=22;ServerType=Unknown;AuthenticationType=Password;PathToKeyFile=C:\_repos\PascoBOCC-IT-DBA\Munis_JMP_VirtualPaymentsAchTransfer\keys\JPMC_NonProd_FTS_PGP.txt;UserName=ftse73656;ProxyType=None;ProxyUsername=;ProxyServer=;ProxyServerPort=0;Timeout=120;DownloadBufferSize=49152;DownloadQueueLength=8;UploadBufferSize=49152;UploadQueueLength=8;UseLargeBuffers=True;EnableTransferQueue=True;UseSmallPackets=False;UseCompression=True;MinimumRsaKeySize=2048;KeyExchangeAlgorithms="DiffieHellmanGroup14SHA1, DiffieHellmanGroupExchangeSHA1, DiffieHellmanGroupExchangeSHA256, ECDiffieHellmanNistP256, Curve25519, DiffieHellmanOakleyGroupSHA256, DiffieHellmanOakleyGroupSHA512";MacAlgorithms="SHA1, SHA256, SHA512";EncryptionAlgorithms="TripleDES, AES, Twofish";UseLegacyGroupExchange=True;UseLegacySshRsaClientAuthentication=False;PreferredHostKeyAlgorithm=RSA;HostKeyAlgorithms="Certificate, DSS, ECDsaNistP256, ED25519, RSA";KeepAliveInterval=0;PathToLogFile=;OutputLog=False;LogLevel=Off;TransferType=Binary;Encoding=65001;UseStreamedDataTransfer=True;UseAsyncDataTransfer=True</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -212,7 +212,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">ftscat.mfts.jpmchase.com</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">fts1.mfts.jpmchase.com</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
